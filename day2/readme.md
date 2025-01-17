@@ -3,6 +3,7 @@
 ## System Architecture
 ![System Architecture and Workflow Diagram](architecture.png)
 
+
 ### Workflow
 **User Registration**:
 User visit signup page --> Fill Registration Form --> Verify Email by OTP --> Data Saved in Sanity
@@ -30,8 +31,16 @@ User visits order tracking page --> Input Order Number or Tracking ID --> Sanity
 | /products/:id | PUT | `{_id: "product1_ch233sd","title":"King Master Chair", "short_description":"this product is ... ", "product_image":"https://sanity...", "category": "chairs", "sku": "CH112HH1", "qty": 12, "price": 12000, "discount_price": 0, "specification": "Quality Wood..." }` | `{message: "Product Updated Successfully!"}` |
 | /products/:id | DELETE | `{_id: "product1_ch233sd","title":"King Master Chair", "short_description":"this product is ... ", "product_image":"https://sanity...", "category": "chairs", "sku": "CH112HH1", "qty": 12, "price": 12000, "discount_price": 0, "specification": "Quality Wood..." }` | `{message: "Product Updated Successfully!"}` |
 | /user | POST | `{"name":"Sarfaraz", "email":"sarfarazunarr@gmail.com", "phone":03012345678, "image": File, "address": "Hala New" }` | `{message: "User Created Successfully! Need Email Verification"}` |
+| /user | GET | | `[{"name":"Sarfaraz", "email":"sarfarazunarr@gmail.com", "phone":03012345678, "image": File, "address": "Hala New" }...]` |
+| /user/:id | GET | | `{"name":"Sarfaraz", "email":"sarfarazunarr@gmail.com", "phone":03012345678, "image": File, "address": "Hala New" }` |
+| /user/:id | PUT | `{"name":"Sarfaraz", "email":"sarfarazunarr@gmail.com", "phone":03012345678, "image": File, "address": "Hala New" }` | `{message: "User Updated Successfully!"}` |
+| /user/:id | DELETE |  | `{message: "User Deleted Successfully!"}` |
 | /payment | POST | `{"type":"stripe", "amount": 12.00, "status" : "received"` | `{message: "Payment Processed Successfully!"}` |
 | /order | POST | `{"products":[{_type: "product", reference: "productcgb"}...], "customer":{_type: "customer", reference: "customer1bbsd"}, "amount":1200, "payment": {_type:"payment", reference: "paymetn233h23"}, order_status: "processing", "datetime": "20251216TT94759", shippingId: "233B2324B" }` | `{message: "Order Placed Successfully!"}` |
+| /order | GET | | `[{"products":[{_type: "product", reference: "productcgb"}...], "customer":{_type: "customer", reference: "customer1bbsd"}, "amount":1200, "payment": {_type:"payment", reference: "paymetn233h23"}, order_status: "processing", "datetime": "20251216TT94759", shippingId: "233B2324B" }...]` |
+| /order/:id | GET | | `{"products":[{_type: "product", reference: "productcgb"}...], "customer":{_type: "customer", reference: "customer1bbsd"}, "amount":1200, "payment": {_type:"payment", reference: "paymetn233h23"}, order_status: "processing", "datetime": "20251216TT94759", shippingId: "233B2324B" }` |
+| /order/:id | PUT | `{order_status: "delivered"}` | `{"message": "Order Status Updated"}` |
+| /order/:id | DELETE | None | `{"message": "Order Deleted"}` |
 | /track-order | GET | `{order_id: '1212H34', token: "skh237323nfkjdf"}` | `{"products":[{_type: "product", reference: "productcgb"}...], "customer":{_type: "customer", reference: "customer1bbsd"}, "amount":1200, "payment": {_type:"payment", reference: "paymetn233h23"}, order_status: "processing", "datetime": "20251216TT94759", shippingId: "233B2324B", departure_city: "Karachi", currentLocation: "Hyderabad", destination: "Hala", expected_delivery: "19-01-2025"  }` |
 
 
