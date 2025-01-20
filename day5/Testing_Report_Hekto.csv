@@ -1,0 +1,10 @@
+Test Case ID,Test Case Description,Test Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC001,Validate product listing page,Open Shop / Category page > Verify products,Products displayed correctly,Products displayed correctly,Passed,Low,-,No issues found
+TC002,Product Page,Select a product > Open its URL,Product Should be displayed perfectly with related products,Product Page displayed & Related Products also,Passed,Medium,-,No issues found
+TC003,Check cart functionality,Add product to cart > Verify cart contents,Cart updates with added product,Cart updates as expected But Quantity is not updatin,Passed,Medium,-,Issue Resolved
+TC004,Ensure responsiveness on mobile,Resize browser window > Check layout,Layout adjusts properly to screen size,Responsive layout working as intended,Passed,Medium,-,Test successful
+TC005,Loading UI when loading,Change Parameters in Filters,Page should show loader ,Page showed loader and then updated result,Passed,Medium,-,Worked
+TC006,User Should Login & See Profile,Login Page > Enter Credentials > Profile Page,User should see profile page and can update details,User seen its profile and can update,Passed,Medium,-,Working
+TC007,Placing Order,View Cart > Checkout > Place Order,User should view cart & Place Order,User added products to Cart & Easily placed order & Some error from sanity,Passed,High,-,Will Be Resolved
+TC008,Filteration,Shop Page > Filters || Shop Page > Pagination,User should select number of results and filters,User is able to select number of results and apply filters,Passed,Low,-,Working
+TC009,,,,,,,,
